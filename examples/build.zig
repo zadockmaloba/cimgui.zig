@@ -9,7 +9,7 @@ fn platform(dir_name: []const u8) !Platform {
 }
 
 fn renderer(dir_name: []const u8) !Renderer {
-    return if (std.mem.indexOf(u8, dir_name, "_vulkan") != null) .Vulkan else if (std.mem.indexOf(u8, dir_name, "_opengl3") != null) .OpenGL3 else error.UnknownRendererBackend;
+    return if (std.mem.indexOf(u8, dir_name, "_vulkan") != null) .Vulkan else if (std.mem.indexOf(u8, dir_name, "_opengl3") != null) .OpenGL3 else if (std.mem.indexOf(u8, dir_name, "_metal") != null) .Metal else error.UnknownRendererBackend;
 }
 
 fn linkLibAndImportModules(lib: *std.Build.Step.Compile, exe: *std.Build.Step.Compile, dir_name: []const u8) void {
@@ -41,6 +41,14 @@ pub fn build(builder: *std.Build) !void {
             std.mem.startsWith(u8, entry.name, "example_") and
             std.mem.indexOf(u8, entry.name, pattern) != null)
         {
+            // Skip Metal examples on non-macOS targets
+            if (std.mem.indexOf(u8, entry.name, "_metal") != null) {
+                if (target.result.os.tag != .macos and target.result.os.tag != .ios) {
+                    std.log.info("Skipping {s} (Metal only available on macOS/iOS)", .{entry.name});
+                    continue;
+                }
+            }
+
             exe = builder.addExecutable(.{
                 .name = entry.name,
                 .root_module = std.Build.Module.create(builder, .{
