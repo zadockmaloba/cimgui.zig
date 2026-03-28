@@ -3,24 +3,24 @@
     .version = "1.0.0",
     .dependencies = .{
         .glfw_zig = .{
-            .url = "git+https://github.com/tiawl/glfw.zig?ref=wayland.zig-wayland-protocols-1.47#65b02416fd6795c0566d6b155a8c0ea23f03a62f",
-            .hash = "glfw_zig-1.0.0-NrvYo8bXGQDQvMHLao8ML7L6L9kL_Idk8IOKBTDyg8aN",
+            .url = "git+https://github.com/tiawl/glfw.zig?ref=X11.zig-libX11-1.8.13#9ab1b6f4c855ec5ad7bc2ec77a6565746d29ec44",
+            .hash = "glfw_zig-1.0.0-NrvYo-PXGQDMOO3ilxE5n1_HpDu_auyqRlHbneGb_JwJ",
         },
         .sdl = .{
-            .url = "git+https://github.com/allyourcodebase/SDL3.git#f85824b0db782b7d01c60aaad8bcb537892394e8",
-            .hash = "sdl-0.0.0-i4QD0UuFqADRQysNyJ1OvCOZnq-clcVhq3BfPcBOf9zr",
+            .url = "git+https://github.com/castholm/SDL#887fa805e40d5c7bb3955ae69b89ed566c6a0471",
+            .hash = "sdl-0.4.0+3.4.0-SDL--rq2owEZsySGuHCuVJ9naEvH3i3e_pyUIjziBtJ-",
         },
         .toolbox = .{
             .url = "git+https://github.com/tiawl/toolbox?ref=1.12.6#79c1dffe608a9c4a7dcf11f98f1dc88b9b46e9f5",
             .hash = "toolbox-1.12.6-kRAu4BJbAAAGPWPltdn1vwY83xau2Zh9015JTQ0MZjyM",
         },
         .zigglgen = .{
-            .url = "git+https://github.com/castholm/zigglgen#b624cc7d2e984f61c63a83a3d0ad6c686782f961",
-            .hash = "zigglgen-0.4.0-bmyqLV6PLwAt0VCiGVgz6kZ448zaiTix2Z8MXEEuN4Vi",
+            .url = "git+https://github.com/castholm/zigglgen#6b21369ac50de8826f8af60a7edb33693b4ec7bf",
+            .hash = "zigglgen-0.5.0-zigglr_CLwBs1aABtYVtxNPo1SB8AzgKMVouoqULqkDQ",
         },
         .vulkan_zig = .{
-            .url = "git+https://github.com/tiawl/vulkan.zig?ref=v1.4.336#fb11b6547a81daaf18964e8321dd6cae040da235",
-            .hash = "vulkan_zig-1.0.0-p2wg3p7RNQEZD3HdlK-1Z9r6WD7faGy446u11y8gLGjk",
+            .url = "git+https://github.com/tiawl/vulkan.zig?ref=v1.4.343#f66e8c34e270bbb471ee057c5c61d20b22e6593d",
+            .hash = "vulkan_zig-1.0.0-p2wg3qmGPQGYTOSvwMxrYSMrUujPD6tJ1bQillB9oLAH",
         },
     },
     .minimum_zig_version = "0.15.1",
